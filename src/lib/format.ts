@@ -7,3 +7,5 @@ export const CATEGORY_STYLE: Record<string, string> = {
   hackathon: "bg-orange-100 text-orange-700",
   social: "bg-emerald-100 text-emerald-700",
 };
+
+export const formatDate = (d: Date) =>
