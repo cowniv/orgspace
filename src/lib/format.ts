@@ -9,3 +9,5 @@ export const CATEGORY_STYLE: Record<string, string> = {
 };
 
 export const formatDate = (d: Date) =>
+  new Intl.DateTimeFormat("en-PH", {
+    weekday: "short",
