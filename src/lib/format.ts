@@ -15,3 +15,5 @@ export const formatDate = (d: Date) =>
     day: "numeric",
     hour: "numeric",
     minute: "2-digit",
+    timeZone: "Asia/Manila",
+  }).format(d);
