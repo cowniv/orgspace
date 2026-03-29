@@ -14,3 +14,7 @@ model Event {
   category    String   // workshop | talk | hackathon | social
   venue       String
   startsAt    DateTime
+  capacity    Int
+  createdAt   DateTime @default(now())
+  rsvps       Rsvp[]
+}
