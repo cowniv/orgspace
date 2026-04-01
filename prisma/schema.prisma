@@ -11,3 +11,13 @@ model Event {
   id          String   @id @default(cuid())
   title       String
   description String
+  category    String   // workshop | talk | hackathon | social
+  venue       String
+  startsAt    DateTime
+  capacity    Int
+  createdAt   DateTime @default(now())
+  rsvps       Rsvp[]
+}
+
+model Rsvp {
+  id        String   @id @default(cuid())
