@@ -21,3 +21,6 @@ model Event {
 
 model Rsvp {
   id        String   @id @default(cuid())
+  name      String
+  email     String
+  program   String
