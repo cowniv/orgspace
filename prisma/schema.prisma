@@ -24,3 +24,6 @@ model Rsvp {
   name      String
   email     String
   program   String
+  createdAt DateTime @default(now())
+  event     Event    @relation(fields: [eventId], references: [id], onDelete: Cascade)
+  eventId   String
