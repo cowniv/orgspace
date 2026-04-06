@@ -15,3 +15,9 @@ async function main() {
 
   await db.event.create({
     data: {
+      title: "Figma to Code: Design Handoff Workshop",
+      description: "Learn how to structure Figma files so developers can build them pixel-perfect. Bring a laptop!",
+      category: "workshop",
+      venue: "PUP Main, Room 402",
+      startsAt: inDays(5),
+      capacity: 40,
