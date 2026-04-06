@@ -21,3 +21,8 @@ async function main() {
       venue: "PUP Main, Room 402",
       startsAt: inDays(5),
       capacity: 40,
+      rsvps: {
+        create: [
+          { name: "Marco Reyes", email: "marco@example.com", program: "BSCpE" },
+          { name: "Andrea Cruz", email: "andrea@example.com", program: "BSIT" },
+        ],
