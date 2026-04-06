@@ -26,3 +26,9 @@ async function main() {
           { name: "Marco Reyes", email: "marco@example.com", program: "BSCpE" },
           { name: "Andrea Cruz", email: "andrea@example.com", program: "BSIT" },
         ],
+      },
+    },
+  });
+
+  await db.event.create({
+    data: {
