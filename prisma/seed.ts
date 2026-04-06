@@ -10,3 +10,8 @@ const inDays = (d: number, hour = 13) => {
 };
 
 async function main() {
+  await db.rsvp.deleteMany();
+  await db.event.deleteMany();
+
+  await db.event.create({
+    data: {
