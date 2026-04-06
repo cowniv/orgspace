@@ -32,3 +32,9 @@ async function main() {
 
   await db.event.create({
     data: {
+      title: "Intro to Full-Stack with Next.js",
+      description: "Server components, server actions and a real database in one hour.",
+      category: "talk",
+      venue: "Online · Google Meet",
+      startsAt: inDays(12, 18),
+      capacity: 150,
