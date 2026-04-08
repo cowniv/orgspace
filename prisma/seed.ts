@@ -38,3 +38,8 @@ async function main() {
       venue: "Online · Google Meet",
       startsAt: inDays(12, 18),
       capacity: 150,
+    },
+  });
+
+  await db.event.create({
+    data: {
