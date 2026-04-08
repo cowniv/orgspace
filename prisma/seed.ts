@@ -49,3 +49,8 @@ async function main() {
       venue: "PUP Engineering Building",
       startsAt: inDays(21, 8),
       capacity: 60,
+    },
+  });
+}
+
+main().finally(() => db.$disconnect());
