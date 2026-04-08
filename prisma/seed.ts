@@ -43,3 +43,9 @@ async function main() {
 
   await db.event.create({
     data: {
+      title: "Mini Hackathon: Build for Your Barangay",
+      description: "24 hours, teams of 3–5, build something that helps your local community.",
+      category: "hackathon",
+      venue: "PUP Engineering Building",
+      startsAt: inDays(21, 8),
+      capacity: 60,
