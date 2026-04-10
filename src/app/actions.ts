@@ -21,3 +21,11 @@ export async function rsvp(_prev: FormState, formData: FormData): Promise<FormSt
   if (!parsed.success) return { fieldErrors: parsed.error.flatten().fieldErrors };
 
   const { eventId, ...guest } = parsed.data;
+
+  try {
+    // check capacity and insert in one transaction so two people can't take the last seat
+    await db.$transaction(async (tx) => {
+      const event = await tx.event.findUnique({
+        where: { id: eventId },
+        include: { _count: { select: { rsvps: true } } },
+      });
