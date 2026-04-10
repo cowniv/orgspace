@@ -14,3 +14,10 @@ const rsvpSchema = z.object({
   name: z.string().trim().min(2, "Enter your full name"),
   email: z.string().trim().toLowerCase().email("Enter a valid email"),
   program: z.string().trim().min(2, "Enter your program, e.g. BSCpE"),
+});
+
+export async function rsvp(_prev: FormState, formData: FormData): Promise<FormState> {
+  const parsed = rsvpSchema.safeParse(Object.fromEntries(formData));
+  if (!parsed.success) return { fieldErrors: parsed.error.flatten().fieldErrors };
+
+  const { eventId, ...guest } = parsed.data;
