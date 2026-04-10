@@ -36,3 +36,11 @@ export async function rsvp(_prev: FormState, formData: FormData): Promise<FormSt
     });
   } catch (err) {
     if (err instanceof Prisma.PrismaClientKnownRequestError && err.code === "P2002") {
+      return { error: "This email has already RSVP'd to this event." };
+    }
+    const messages: Record<string, string> = {
+      NOT_FOUND: "Event not found.",
+      PAST: "This event has already started.",
+      FULL: "Sorry, this event is full.",
+    };
+    return { error: messages[(err as Error).message] ?? "Something went wrong. Try again." };
