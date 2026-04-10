@@ -29,3 +29,10 @@ export async function rsvp(_prev: FormState, formData: FormData): Promise<FormSt
         where: { id: eventId },
         include: { _count: { select: { rsvps: true } } },
       });
+      if (!event) throw new Error("NOT_FOUND");
+      if (event.startsAt < new Date()) throw new Error("PAST");
+      if (event._count.rsvps >= event.capacity) throw new Error("FULL");
+      await tx.rsvp.create({ data: { ...guest, eventId } });
+    });
+  } catch (err) {
+    if (err instanceof Prisma.PrismaClientKnownRequestError && err.code === "P2002") {
