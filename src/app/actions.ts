@@ -44,3 +44,11 @@ export async function rsvp(_prev: FormState, formData: FormData): Promise<FormSt
       FULL: "Sorry, this event is full.",
     };
     return { error: messages[(err as Error).message] ?? "Something went wrong. Try again." };
+  }
+
+  revalidatePath(`/events/${eventId}`);
+  revalidatePath("/");
+  return { ok: true };
+}
+
+const eventSchema = z.object({
