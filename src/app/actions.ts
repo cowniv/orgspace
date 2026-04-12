@@ -52,3 +52,10 @@ export async function rsvp(_prev: FormState, formData: FormData): Promise<FormSt
 }
 
 const eventSchema = z.object({
+  passcode: z.string(),
+  title: z.string().trim().min(4, "Title is too short").max(100),
+  description: z.string().trim().min(10, "Add a short description"),
+  category: z.enum(CATEGORIES),
+  venue: z.string().trim().min(2, "Where is it?"),
+  startsAt: z.coerce.date().refine((d) => d > new Date(), "Pick a future date"),
+  capacity: z.coerce.number().int().min(1).max(1000),
