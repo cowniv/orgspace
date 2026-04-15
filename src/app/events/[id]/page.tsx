@@ -12,3 +12,10 @@ export default async function EventPage({ params }: { params: Promise<{ id: stri
   const event = await db.event.findUnique({
     where: { id },
     include: { rsvps: { orderBy: { createdAt: "desc" }, take: 8 }, _count: { select: { rsvps: true } } },
+  });
+  if (!event) notFound();
+
+  const taken = event._count.rsvps;
+  const percent = Math.min(100, Math.round((taken / event.capacity) * 100));
+  const full = taken >= event.capacity;
+
