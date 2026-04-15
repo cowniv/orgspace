@@ -67,3 +67,10 @@ export async function createEvent(_prev: FormState, formData: FormData): Promise
 
   const { passcode, ...data } = parsed.data;
   if (!process.env.ADMIN_PASSCODE || passcode !== process.env.ADMIN_PASSCODE) {
+    return { fieldErrors: { passcode: ["Wrong officer passcode"] } };
+  }
+
+  const event = await db.event.create({ data });
+  revalidatePath("/");
+  redirect(`/events/${event.id}`);
+}
