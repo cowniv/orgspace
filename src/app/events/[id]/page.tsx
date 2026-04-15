@@ -19,3 +19,9 @@ export default async function EventPage({ params }: { params: Promise<{ id: stri
   const percent = Math.min(100, Math.round((taken / event.capacity) * 100));
   const full = taken >= event.capacity;
 
+  return (
+    <div className="grid gap-8 md:grid-cols-[1fr_340px]">
+      <article className="space-y-4">
+        <Link href="/" className="text-sm text-slate-500 hover:text-brand">← All events</Link>
+        <span className={`block w-fit rounded-full px-2.5 py-0.5 text-xs font-semibold capitalize ${CATEGORY_STYLE[event.category]}`}>
+          {event.category}
