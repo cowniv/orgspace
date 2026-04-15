@@ -25,3 +25,23 @@ export default async function EventPage({ params }: { params: Promise<{ id: stri
         <Link href="/" className="text-sm text-slate-500 hover:text-brand">← All events</Link>
         <span className={`block w-fit rounded-full px-2.5 py-0.5 text-xs font-semibold capitalize ${CATEGORY_STYLE[event.category]}`}>
           {event.category}
+        </span>
+        <h1 className="text-3xl font-bold">{event.title}</h1>
+        <div className="space-y-1 text-slate-600">
+          <p>📅 {formatDate(event.startsAt)}</p>
+          <p>📍 {event.venue}</p>
+        </div>
+        <p className="whitespace-pre-line leading-relaxed">{event.description}</p>
+
+        <div className="rounded-xl border border-slate-200 bg-white p-4">
+          <div className="mb-2 flex justify-between text-sm">
+            <span className="font-medium">{taken} / {event.capacity} going</span>
+            <span className="text-slate-500">{percent}%</span>
+          </div>
+          <div className="h-2 overflow-hidden rounded-full bg-slate-200">
+            <div className="h-full bg-brand" style={{ width: `${percent}%` }} />
+          </div>
+          {event.rsvps.length > 0 && (
+            <ul className="mt-4 flex flex-wrap gap-2">
+              {event.rsvps.map((r) => (
+                <li key={r.id} className="rounded-full bg-brand-light px-3 py-1 text-xs text-brand">
