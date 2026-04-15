@@ -32,3 +32,10 @@ export default async function EventPage({ params }: { params: Promise<{ id: stri
           <p>📍 {event.venue}</p>
         </div>
         <p className="whitespace-pre-line leading-relaxed">{event.description}</p>
+
+        <div className="rounded-xl border border-slate-200 bg-white p-4">
+          <div className="mb-2 flex justify-between text-sm">
+            <span className="font-medium">{taken} / {event.capacity} going</span>
+            <span className="text-slate-500">{percent}%</span>
+          </div>
+          <div className="h-2 overflow-hidden rounded-full bg-slate-200">
