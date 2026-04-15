@@ -45,3 +45,10 @@ export default async function EventPage({ params }: { params: Promise<{ id: stri
             <ul className="mt-4 flex flex-wrap gap-2">
               {event.rsvps.map((r) => (
                 <li key={r.id} className="rounded-full bg-brand-light px-3 py-1 text-xs text-brand">
+                  {r.name.split(" ")[0]} · {r.program}
+                </li>
+              ))}
+              {taken > event.rsvps.length && (
+                <li className="px-2 py-1 text-xs text-slate-500">+{taken - event.rsvps.length} more</li>
+              )}
+            </ul>
