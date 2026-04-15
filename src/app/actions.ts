@@ -59,3 +59,11 @@ const eventSchema = z.object({
   venue: z.string().trim().min(2, "Where is it?"),
   startsAt: z.coerce.date().refine((d) => d > new Date(), "Pick a future date"),
   capacity: z.coerce.number().int().min(1).max(1000),
+});
+
+export async function createEvent(_prev: FormState, formData: FormData): Promise<FormState> {
+  const parsed = eventSchema.safeParse(Object.fromEntries(formData));
+  if (!parsed.success) return { fieldErrors: parsed.error.flatten().fieldErrors };
+
+  const { passcode, ...data } = parsed.data;
+  if (!process.env.ADMIN_PASSCODE || passcode !== process.env.ADMIN_PASSCODE) {
