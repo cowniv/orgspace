@@ -39,3 +39,9 @@ export default async function EventPage({ params }: { params: Promise<{ id: stri
             <span className="text-slate-500">{percent}%</span>
           </div>
           <div className="h-2 overflow-hidden rounded-full bg-slate-200">
+            <div className="h-full bg-brand" style={{ width: `${percent}%` }} />
+          </div>
+          {event.rsvps.length > 0 && (
+            <ul className="mt-4 flex flex-wrap gap-2">
+              {event.rsvps.map((r) => (
+                <li key={r.id} className="rounded-full bg-brand-light px-3 py-1 text-xs text-brand">
