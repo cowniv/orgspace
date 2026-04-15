@@ -25,3 +25,10 @@ export default async function EventPage({ params }: { params: Promise<{ id: stri
         <Link href="/" className="text-sm text-slate-500 hover:text-brand">← All events</Link>
         <span className={`block w-fit rounded-full px-2.5 py-0.5 text-xs font-semibold capitalize ${CATEGORY_STYLE[event.category]}`}>
           {event.category}
+        </span>
+        <h1 className="text-3xl font-bold">{event.title}</h1>
+        <div className="space-y-1 text-slate-600">
+          <p>📅 {formatDate(event.startsAt)}</p>
+          <p>📍 {event.venue}</p>
+        </div>
+        <p className="whitespace-pre-line leading-relaxed">{event.description}</p>
