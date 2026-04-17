@@ -59,3 +59,9 @@ export default async function EventPage({ params }: { params: Promise<{ id: stri
       <aside>
         <div className="sticky top-6 rounded-2xl border border-slate-200 bg-white p-5">
           <h2 className="mb-4 font-semibold">{full ? "This event is full" : "Reserve your seat"}</h2>
+          {!full && <RsvpForm eventId={event.id} />}
+        </div>
+      </aside>
+    </div>
+  );
+}
