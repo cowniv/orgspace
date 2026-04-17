@@ -52,3 +52,10 @@ export default async function EventPage({ params }: { params: Promise<{ id: stri
                 <li className="px-2 py-1 text-xs text-slate-500">+{taken - event.rsvps.length} more</li>
               )}
             </ul>
+          )}
+        </div>
+      </article>
+
+      <aside>
+        <div className="sticky top-6 rounded-2xl border border-slate-200 bg-white p-5">
+          <h2 className="mb-4 font-semibold">{full ? "This event is full" : "Reserve your seat"}</h2>
