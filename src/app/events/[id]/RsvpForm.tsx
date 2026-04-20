@@ -11,3 +11,7 @@ export default function RsvpForm({ eventId }: { eventId: string }) {
       <div className="rounded-lg bg-emerald-50 p-4 text-sm text-emerald-700">
         🎉 You're in! See you there.
       </div>
+    );
+  }
+
+  const err = (field: string) =>
