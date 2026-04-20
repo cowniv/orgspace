@@ -19,3 +19,7 @@ export default function RsvpForm({ eventId }: { eventId: string }) {
 
   return (
     <form action={action} className="space-y-3">
+      <input type="hidden" name="eventId" value={eventId} />
+      <div>
+        <input name="name" placeholder="Full name" className="input" />
+        {err("name")}
