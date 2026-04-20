@@ -15,3 +15,7 @@ export default function RsvpForm({ eventId }: { eventId: string }) {
   }
 
   const err = (field: string) =>
+    state.fieldErrors?.[field]?.[0] && <p className="mt-1 text-xs text-rose-600">{state.fieldErrors[field][0]}</p>;
+
+  return (
+    <form action={action} className="space-y-3">
