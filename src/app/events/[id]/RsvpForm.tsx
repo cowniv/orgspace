@@ -23,3 +23,7 @@ export default function RsvpForm({ eventId }: { eventId: string }) {
       <div>
         <input name="name" placeholder="Full name" className="input" />
         {err("name")}
+      </div>
+      <div>
+        <input name="email" type="email" placeholder="Email" className="input" />
+        {err("email")}
