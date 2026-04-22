@@ -35,3 +35,7 @@ export default function RsvpForm({ eventId }: { eventId: string }) {
       {state.error && <p className="rounded-lg bg-rose-50 p-2 text-sm text-rose-700">{state.error}</p>}
       <button className="btn w-full" disabled={pending}>
         {pending ? "Saving…" : "RSVP"}
+      </button>
+    </form>
+  );
+}
