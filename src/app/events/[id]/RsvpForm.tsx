@@ -27,3 +27,7 @@ export default function RsvpForm({ eventId }: { eventId: string }) {
       <div>
         <input name="email" type="email" placeholder="Email" className="input" />
         {err("email")}
+      </div>
+      <div>
+        <input name="program" placeholder="Program (e.g. BSCpE)" className="input" />
+        {err("program")}
