@@ -31,3 +31,7 @@ export default function RsvpForm({ eventId }: { eventId: string }) {
       <div>
         <input name="program" placeholder="Program (e.g. BSCpE)" className="input" />
         {err("program")}
+      </div>
+      {state.error && <p className="rounded-lg bg-rose-50 p-2 text-sm text-rose-700">{state.error}</p>}
+      <button className="btn w-full" disabled={pending}>
+        {pending ? "Saving…" : "RSVP"}
