@@ -30,3 +30,9 @@ export default function NewEventPage() {
           <label className="block text-sm font-medium">
             Category
             <select name="category" className="input mt-1 capitalize">
+              {CATEGORIES.map((c) => <option key={c} value={c}>{c}</option>)}
+            </select>
+          </label>
+          <label className="block text-sm font-medium">
+            Capacity
+            <input name="capacity" type="number" min={1} defaultValue={50} className="input mt-1" />
