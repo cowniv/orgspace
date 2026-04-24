@@ -24,3 +24,22 @@ export default function NewEventPage() {
         <label className="block text-sm font-medium">
           Description
           <textarea name="description" rows={4} className="input mt-1" />
+          {err("description")}
+        </label>
+        <div className="grid gap-4 sm:grid-cols-2">
+          <label className="block text-sm font-medium">
+            Category
+            <select name="category" className="input mt-1 capitalize">
+              {CATEGORIES.map((c) => <option key={c} value={c}>{c}</option>)}
+            </select>
+          </label>
+          <label className="block text-sm font-medium">
+            Capacity
+            <input name="capacity" type="number" min={1} defaultValue={50} className="input mt-1" />
+            {err("capacity")}
+          </label>
+        </div>
+        <label className="block text-sm font-medium">
+          Venue
+          <input name="venue" className="input mt-1" />
+          {err("venue")}
