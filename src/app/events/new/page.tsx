@@ -17,3 +17,10 @@ export default function NewEventPage() {
 
       <form action={action} className="space-y-4 rounded-2xl border border-slate-200 bg-white p-6">
         <label className="block text-sm font-medium">
+          Title
+          <input name="title" className="input mt-1" />
+          {err("title")}
+        </label>
+        <label className="block text-sm font-medium">
+          Description
+          <textarea name="description" rows={4} className="input mt-1" />
