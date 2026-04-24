@@ -11,3 +11,9 @@ export default function NewEventPage() {
     state.fieldErrors?.[field]?.[0] && <p className="mt-1 text-xs text-rose-600">{state.fieldErrors[field][0]}</p>;
 
   return (
+    <div className="mx-auto max-w-xl">
+      <h1 className="mb-1 text-2xl font-bold">Create an event</h1>
+      <p className="mb-6 text-sm text-slate-500">For org officers. You'll need the officer passcode.</p>
+
+      <form action={action} className="space-y-4 rounded-2xl border border-slate-200 bg-white p-6">
+        <label className="block text-sm font-medium">
