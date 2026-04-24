@@ -36,3 +36,10 @@ export default function NewEventPage() {
           <label className="block text-sm font-medium">
             Capacity
             <input name="capacity" type="number" min={1} defaultValue={50} className="input mt-1" />
+            {err("capacity")}
+          </label>
+        </div>
+        <label className="block text-sm font-medium">
+          Venue
+          <input name="venue" className="input mt-1" />
+          {err("venue")}
