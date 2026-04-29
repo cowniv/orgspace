@@ -49,3 +49,9 @@ export default function NewEventPage() {
           <input name="startsAt" type="datetime-local" className="input mt-1" />
           {err("startsAt")}
         </label>
+        <label className="block text-sm font-medium">
+          Officer passcode
+          <input name="passcode" type="password" className="input mt-1" />
+          {err("passcode")}
+        </label>
+        <button className="btn w-full" disabled={pending}>
