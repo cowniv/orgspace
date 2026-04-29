@@ -55,3 +55,9 @@ export default function NewEventPage() {
           {err("passcode")}
         </label>
         <button className="btn w-full" disabled={pending}>
+          {pending ? "Creating…" : "Create event"}
+        </button>
+      </form>
+    </div>
+  );
+}
