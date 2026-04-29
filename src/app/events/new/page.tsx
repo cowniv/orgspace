@@ -43,3 +43,9 @@ export default function NewEventPage() {
           Venue
           <input name="venue" className="input mt-1" />
           {err("venue")}
+        </label>
+        <label className="block text-sm font-medium">
+          Date &amp; time
+          <input name="startsAt" type="datetime-local" className="input mt-1" />
+          {err("startsAt")}
+        </label>
