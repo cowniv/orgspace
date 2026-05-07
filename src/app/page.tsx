@@ -13,3 +13,10 @@ export default async function Home({
 
   const events = await db.event.findMany({
     where: {
+      startsAt: { gte: new Date() },
+      ...(category ? { category } : {}),
+      ...(q ? { title: { contains: q } } : {}),
+    },
+    orderBy: { startsAt: "asc" },
+    include: { _count: { select: { rsvps: true } } },
+  });
