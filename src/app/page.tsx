@@ -6,3 +6,10 @@ export const dynamic = "force-dynamic";
 
 export default async function Home({
   searchParams,
+}: {
+  searchParams: Promise<{ category?: string; q?: string }>;
+}) {
+  const { category, q } = await searchParams;
+
+  const events = await db.event.findMany({
+    where: {
