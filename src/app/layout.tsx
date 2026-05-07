@@ -17,3 +17,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               OrgSpace
             </Link>
             <Link href="/events/new" className="btn">
+              + New event
+            </Link>
+          </nav>
