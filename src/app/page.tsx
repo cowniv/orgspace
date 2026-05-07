@@ -20,3 +20,11 @@ export default async function Home({
     orderBy: { startsAt: "asc" },
     include: { _count: { select: { rsvps: true } } },
   });
+
+  return (
+    <div className="space-y-6">
+      <section>
+        <h1 className="text-3xl font-bold">Upcoming events</h1>
+        <p className="text-slate-500">Workshops, talks and hackathons from campus orgs.</p>
+      </section>
+
