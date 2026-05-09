@@ -28,3 +28,10 @@ export default async function Home({
         <p className="text-slate-500">Workshops, talks and hackathons from campus orgs.</p>
       </section>
 
+      <form className="flex flex-wrap gap-2">
+        <input name="q" defaultValue={q} placeholder="Search events…" className="input max-w-xs" />
+        <select name="category" defaultValue={category ?? ""} className="input max-w-44 capitalize">
+          <option value="">All categories</option>
+          {CATEGORIES.map((c) => (
+            <option key={c} value={c}>{c}</option>
+          ))}
