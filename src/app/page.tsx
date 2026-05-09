@@ -35,3 +35,10 @@ export default async function Home({
           {CATEGORIES.map((c) => (
             <option key={c} value={c}>{c}</option>
           ))}
+        </select>
+        <button className="btn">Filter</button>
+      </form>
+
+      {events.length === 0 ? (
+        <p className="rounded-xl border border-dashed border-slate-300 p-10 text-center text-slate-500">
+          No upcoming events found.
