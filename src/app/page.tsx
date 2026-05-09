@@ -42,3 +42,11 @@ export default async function Home({
       {events.length === 0 ? (
         <p className="rounded-xl border border-dashed border-slate-300 p-10 text-center text-slate-500">
           No upcoming events found.
+        </p>
+      ) : (
+        <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {events.map((e) => {
+            const left = e.capacity - e._count.rsvps;
+            return (
+              <li key={e.id}>
+                <Link
