@@ -50,3 +50,10 @@ export default async function Home({
             return (
               <li key={e.id}>
                 <Link
+                  href={`/events/${e.id}`}
+                  className="flex h-full flex-col gap-2 rounded-2xl border border-slate-200 bg-white p-5 transition hover:-translate-y-0.5 hover:shadow-md"
+                >
+                  <span className={`w-fit rounded-full px-2.5 py-0.5 text-xs font-semibold capitalize ${CATEGORY_STYLE[e.category]}`}>
+                    {e.category}
+                  </span>
+                  <h2 className="font-semibold leading-snug">{e.title}</h2>
