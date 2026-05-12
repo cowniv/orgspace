@@ -35,3 +35,25 @@ export default async function Home({
           {CATEGORIES.map((c) => (
             <option key={c} value={c}>{c}</option>
           ))}
+        </select>
+        <button className="btn">Filter</button>
+      </form>
+
+      {events.length === 0 ? (
+        <p className="rounded-xl border border-dashed border-slate-300 p-10 text-center text-slate-500">
+          No upcoming events found.
+        </p>
+      ) : (
+        <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {events.map((e) => {
+            const left = e.capacity - e._count.rsvps;
+            return (
+              <li key={e.id}>
+                <Link
+                  href={`/events/${e.id}`}
+                  className="flex h-full flex-col gap-2 rounded-2xl border border-slate-200 bg-white p-5 transition hover:-translate-y-0.5 hover:shadow-md"
+                >
+                  <span className={`w-fit rounded-full px-2.5 py-0.5 text-xs font-semibold capitalize ${CATEGORY_STYLE[e.category]}`}>
+                    {e.category}
+                  </span>
+                  <h2 className="font-semibold leading-snug">{e.title}</h2>
