@@ -57,3 +57,10 @@ export default async function Home({
                     {e.category}
                   </span>
                   <h2 className="font-semibold leading-snug">{e.title}</h2>
+                  <p className="text-sm text-slate-500">{formatDate(e.startsAt)}</p>
+                  <p className="text-sm text-slate-500">{e.venue}</p>
+                  <p className={`mt-auto pt-2 text-sm font-medium ${left > 0 ? "text-brand" : "text-rose-600"}`}>
+                    {left > 0 ? `${left} seats left` : "Full"}
+                  </p>
+                </Link>
+              </li>
