@@ -5,3 +5,5 @@
   --color-brand-light: #e6ecf5;
 }
 
+@layer components {
+  .input {
