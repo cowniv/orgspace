@@ -8,3 +8,7 @@ A full-stack events platform for campus orgs, inspired by my work with GDG PUP, 
 - Server-rendered event list with search and category filters (URL search params)
 - Event pages with a live capacity bar and recent attendees
 - RSVP through a **server action**, validated with **Zod**
+- Capacity check and insert in one **database transaction**, so the last seat can't be double-booked
+- Unique `(event, email)` constraint, so nobody can RSVP twice
+- Officer-only event creation behind a passcode (env variable)
+- Prisma + SQLite locally; switch to Postgres for deployment
