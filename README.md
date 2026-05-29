@@ -18,3 +18,7 @@ Next.js 15 (App Router, Server Components, Server Actions) · React 19 · TypeSc
 
 ### Run
 ```bash
+npm install
+cp .env.example .env
+npm run db:push
+npm run db:seed
