@@ -15,3 +15,6 @@ A full-stack events platform for campus orgs, inspired by my work with GDG PUP, 
 
 ### Tech
 Next.js 15 (App Router, Server Components, Server Actions) · React 19 · TypeScript · Prisma · Zod · Tailwind CSS v4
+
+### Run
+```bash
