@@ -12,3 +12,6 @@ A full-stack events platform for campus orgs, inspired by my work with GDG PUP, 
 - Unique `(event, email)` constraint, so nobody can RSVP twice
 - Officer-only event creation behind a passcode (env variable)
 - Prisma + SQLite locally; switch to Postgres for deployment
+
+### Tech
+Next.js 15 (App Router, Server Components, Server Actions) · React 19 · TypeScript · Prisma · Zod · Tailwind CSS v4
