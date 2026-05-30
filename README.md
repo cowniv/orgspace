@@ -28,3 +28,6 @@ npm run dev
 ### What I practiced
 - Server vs client components
 - Server actions with `useActionState`
+- Data modeling and relations in Prisma
+- Transactions and unique constraints
+- Schema validation shared between form and server
