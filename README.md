@@ -25,3 +25,6 @@ npm run db:seed
 npm run dev
 ```
 
+### What I practiced
+- Server vs client components
+- Server actions with `useActionState`
